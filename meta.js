@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-
 const toPascal = require('to-pascal-case')
 
 module.exports = {
@@ -54,11 +53,8 @@ module.exports = {
 	complete: function(data, {logger}) {
 		// Rename to be compatible with styleguide configuration
 		const cmpDir = data.inPlace?'src/Component':path.resolve(data.destDirName, 'src/Component')
-		logger.log(cmpDir)
 		const testDir = data.inPlace?'test':path.resolve(data.destDirName, 'test')
 		const pascalName = toPascal(data.name)
-		logger.log(testDir)
-		
 		fs.renameSync(
 			path.resolve(cmpDir, 'Component.vue'),
 			path.resolve(cmpDir, pascalName + '.vue')

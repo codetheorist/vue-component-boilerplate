@@ -1,7 +1,8 @@
-const presetKarma = require('poi-preset-karma');
-const webpack = require('webpack');
-const glob = require('glob').sync;
-const {name} = require('./package.json');
+const presetKarma = require('poi-preset-karma')
+const webpack = require('webpack')
+const glob = require('glob').sync
+const {name} = require('./package.json')
+const toPascal = require('to-pascal-case')
 
 module.exports = {
   entry: glob('./src/**/*.vue'),
@@ -18,5 +19,5 @@ module.exports = {
       frameworks: ['mocha', 'chai', 'phantomjs-shim'],
     })
   ],
-  moduleName: '{{ camelcase name }}'
-};
+  moduleName: toPascal(name)
+}
