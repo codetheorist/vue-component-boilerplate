@@ -1,7 +1,7 @@
 # VueJS Component Boilerplate
-## A VueJS template for building re-usable, packaged, VueJS components.
+### A VueJS template for building re-usable, packaged, VueJS components.
 
-### Usage
+#### Usage
 
 This is a template for use with the [Vue CLI](https://github.com/vuejs/vue-cli) command line tool.
 
