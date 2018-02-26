@@ -1,5 +1,8 @@
 # VueJS Component Boilerplate
-### A VueJS template for building re-usable, packaged, VueJS components.
+
+[![Build Status](https://travis-ci.org/vue-templates/vue-component-boilerplate.svg?branch=master)](https://travis-ci.org/vue-templates/vue-component-boilerplate)
+
+A VueJS template for building re-usable, packaged, VueJS components.
 
 #### Usage
 
