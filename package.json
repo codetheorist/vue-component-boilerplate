@@ -1,0 +1,32 @@
+{
+  "name": "vue-component-boilerplate",
+  "version": "1.0.0",
+  "description": "A VueJS template for building re-usable, packaged, VueJS components.",
+  "main": "meta.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-templates/vue-component-boilerplate.git"
+  },
+  "keywords": [
+    "vue",
+    "javascript",
+    "boilerplate",
+    "component",
+    "webpack"
+  ],
+  "author": "Alex Scott <codetheorist@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vue-templates/vue-component-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vue-templates/vue-component-boilerplate#readme",
+  "devDependencies": {
+    "vue-cli": "^2.9.3"
+  }
+}
