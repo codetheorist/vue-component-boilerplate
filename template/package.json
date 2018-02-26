@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "{{ description }}",
   "author": "{{ author }}",
-  "main": "dist/{{name}}.min.js",
+  "main": "dist/{{ pascalcase name }}.min.js",
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/**/*.vue",

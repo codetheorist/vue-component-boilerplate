@@ -1,10 +1,7 @@
-const toPascal = require('to-pascal-case')
-const pascalName = toPascal(name)
-
 import Vue from 'vue'
-import Component from '../../src/{{ pascalName }}/{{ pascalName }}'
+import Component from '../../src/{{ pascalcase name }}/{{ pascalcase name }}'
 
-describe('{{ name }}.vue', () => {
+describe('{{ pascalcase name }}.vue', () => {
   const Constructor = Vue.extend(Component)
   const propsData = {text: 'Test text'}
 

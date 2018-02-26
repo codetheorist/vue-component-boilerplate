@@ -1,14 +1,15 @@
 const presetKarma = require('poi-preset-karma')
 const webpack = require('webpack')
 const glob = require('glob').sync
-const {name} = require('./package.json')
 const toPascal = require('to-pascal-case')
+const pkg = require('./package.json')
+const PascalName = toPascal(pkg.name)
 
 module.exports = {
   entry: glob('./src/**/*.vue'),
   filename: {
-    js: name + '.min.js',
-    css: name + '.min.css',
+    js: PascalName + '.min.js',
+    css: PascalName + '.min.css',
   },
   sourceMap: true,
   html: false,
@@ -19,5 +20,5 @@ module.exports = {
       frameworks: ['mocha', 'chai', 'phantomjs-shim'],
     })
   ],
-  moduleName: toPascal(name)
+  moduleName: PascalName
 }

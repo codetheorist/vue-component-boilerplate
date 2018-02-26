@@ -1,4 +1,4 @@
-const {spawn} = require('child_process');
+const {spawn} = require('child_process')
 
 const commands = [
   {cmd: 'rm', args: ['-r', 'sandbox'], ignoreErrors: true},
@@ -9,40 +9,40 @@ const commands = [
   {cmd: 'npm', args: ['run', 'build:doc'], cwd: 'sandbox'},
   {cmd: 'npm', args: ['run', 'test'], cwd: 'sandbox'},
   {cmd: 'npm', args: ['run', 'test:cov'], cwd: 'sandbox'}
-];
+]
 
 function executeCommand(command, index) {
   return new Promise((resolve, reject) => {
-    let cp = spawn(command.cmd, command.args, {cwd: command.cwd});
-    process.on('exit', cp.kill);
+    let cp = spawn(command.cmd, command.args, {cwd: command.cwd})
+    process.on('exit', cp.kill)
 
-    cp.stdout.setEncoding('utf-8');
-    cp.stdin.setEncoding('utf-8');
+    cp.stdout.setEncoding('utf-8')
+    cp.stdin.setEncoding('utf-8')
 
     // Ignore pipe errors
-    cp.stdin.on('error', () => {});
-    cp.stdout.on('error',() => {});
+    cp.stdin.on('error', () => {})
+    cp.stdout.on('error',() => {})
 
-    // cp.stdout.pipe(process.stdout);
-    cp.stderr.pipe(process.stderr);
+    // cp.stdout.pipe(process.stdout)
+    cp.stderr.pipe(process.stderr)
 
-    let rejected = false;
+    let rejected = false
     if(command.yes) {
       cp.stdout.on('data', function() {
-        if (!rejected) cp.stdin.write("\n");
-      });
+        if (!rejected) cp.stdin.write("\n")
+      })
     }
     cp.once('error', code => {
       if (!rejected) {
-        reject(code);
-        rejected = true;
+        reject(code)
+        rejected = true
       }
-    });
+    })
 
     cp.once('exit', code => {
       if (code) {
-        reject(code);
-        rejected = true;
+        reject(code)
+        rejected = true
       } else {
         console.log(
           '=> process',
@@ -51,19 +51,19 @@ function executeCommand(command, index) {
           commands.length,
           'exit with status',
           code
-        );
-        resolve(code);
+        )
+        resolve(code)
       }
-    });
-  });
+    })
+  })
 }
 
 commands.reduce((prev, next, index) => {
   return prev.then(() => {
     return executeCommand(next, index)
       .catch(code => {
-        console.log('child process exit with', code);
-        if (!next.ignoreErrors) process.exit(code);
-      });
-  });
-}, Promise.resolve());
+        console.log('child process exit with', code)
+        if (!next.ignoreErrors) process.exit(code)
+      })
+  })
+}, Promise.resolve())

@@ -48,6 +48,9 @@ module.exports = {
 		camelcase: function(str) {
 			return str.replace(/([\-_\s]+[a-z])|(^[a-z])/g, $1 => $1.toUpperCase())
 							.replace(/[\-_\s]+/g, '')
+		},
+		pascalcase: function(str) {
+			return toPascal(str)
 		}
 	},
 	complete: function(data, {logger}) {
@@ -55,6 +58,7 @@ module.exports = {
 		const cmpDir = data.inPlace?'src/Component':path.resolve(data.destDirName, 'src/Component')
 		const testDir = data.inPlace?'test':path.resolve(data.destDirName, 'test')
 		const pascalName = toPascal(data.name)
+		
 		fs.renameSync(
 			path.resolve(cmpDir, 'Component.vue'),
 			path.resolve(cmpDir, pascalName + '.vue')
