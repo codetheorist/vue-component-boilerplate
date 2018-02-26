@@ -28,5 +28,8 @@
   "homepage": "https://github.com/vue-templates/vue-component-boilerplate#readme",
   "devDependencies": {
     "vue-cli": "^2.9.3"
+  },
+  "dependencies": {
+    "to-pascal-case": "^1.0.0"
   }
 }

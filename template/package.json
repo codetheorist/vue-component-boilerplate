@@ -39,6 +39,7 @@
     "node-glob": "^1.2.0",
     "poi": "^9.5.2",
     "poi-preset-karma": "^9.2.1",
+    "to-pascal-case": "^1.0.0",
     "typescript": "^2.6.1",
     "vue-styleguidist": "^1.4.4",
     "vue-webpack-loaders": "^1.0.6",
