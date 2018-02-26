@@ -1,4 +1,4 @@
-# {{ name }}
+# {{ pascalcase name }}
 
 > {{ description }}
 
@@ -21,10 +21,10 @@
 ### ES6 Modules / CommonJS
 
 ```js
-import {{ camelcase name }} from '{{ name }}';
-import '{{ name }}/dist/{{ name }}.min.css';
+import {{ pascalcase name }} from '{{ pascalcase name }}'
+import '{{ pascalcase name }}/dist/{{ pascalcase name }}.min.css'
 
-Vue.component('{{ name }}', {{ camelcase name }});
+Vue.component('{{ name }}', {{ pascalcase name }})
 ```
 
 ```html
@@ -37,11 +37,11 @@ Vue.component('{{ name }}', {{ camelcase name }});
 <{{name}} text="Hello World!"></{{name}}>
 
 <script src="https://unpkg.com/vue" charset="utf-8"></script>
-<script src="./dist/umd/{{ name }}.min.js" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="./dist/umd/{{ name }}.min.css">
+<script src="./dist/umd/{{ pascalcase name }}.min.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="./dist/umd/{{ pascalcase name }}.min.css">
 
 <script type="text/javascript">
-  Vue.component('{{ name }}', window.{{ camelcase name }});
+  Vue.component('{{ name }}', window.{{ pascalcase name }})
 </script>
 ```
 
