@@ -21,27 +21,6 @@ module.exports = {
 		author: {
 			type: "string",
 			label: "Author"
-		},
-		autoInstall: {
-			type: 'list',
-			message: 'Should we automatically install project dependencies? (recommended)',
-			choices: [
-				{
-					name: 'Yes, use NPM',
-					value: 'npm',
-					short: 'npm',
-				},
-				{
-					name: 'Yes, use Yarn',
-					value: 'yarn',
-					short: 'yarn',
-				},
-				{
-					name: 'No, I will handle that myself',
-					value: false,
-					short: 'no',
-				},
-			],
 		}
 	},
 	helpers: {
